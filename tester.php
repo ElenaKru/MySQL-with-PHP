@@ -6,15 +6,30 @@ $screen2 = new Screen('Samsung', 620, 'S22F350FH', 'TN', 21.5);
 $screen3 = new Screen('Philips', 1517, '273V5LHAB', 'TFT', 27);
 $screen4 = new Screen('Samsung', 2074, 'C27F591FD', 'VA', 27);
 
+$screen1->insert();
+$screen2->insert();
+$screen3->insert();
+$screen4->insert();
+
 $mouse1 = new Mouse('Microsoft', 129, 'Mobile Mouse 1850', false);
 $mouse2 = new Mouse('LogiTech', 799, 'MX Master', false);
 $mouse3 = new Mouse('LogiTech', 128, 'M185', true);
 $mouse4 = new Mouse('HP', 99, 'X3000 H2C22AA', false);
 
+$mouse1->insert();
+$mouse2->insert();
+$mouse3->insert();
+$mouse4->insert();
+
 $keyboard1 = new Keyboard('Microsoft', 325, 'Natural Ergonomic 4000', true);
 $keyboard2 = new Keyboard('Logitech', 285, 'G105', true);
 $keyboard3 = new Keyboard('RAPOO', 189, 'E6100', false);
 $keyboard4 = new Keyboard('Corsair', 799, 'K95', true);
+
+/*$keyboard1->insert();
+$keyboard2->insert();
+$keyboard3->insert();
+$keyboard4->insert();*/
 
 $computer1 = new Computer(
     'GIGABYTE', 

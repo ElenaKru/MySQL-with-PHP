@@ -27,6 +27,35 @@ class Screen extends ElectronicPart implements IElectronicPart {
             ', model: '. $this->model . 
             ', Price: ' . $this->price;
     }
+
+    public function insert() {
+        $host = '127.0.0.1';
+        $db   = 'northwind';
+        $user = 'root';
+        $pass = '';
+        $charset = 'utf8';
+
+        $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
+        $opt = [
+            PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+            PDO::ATTR_EMULATE_PREPARES   => false,
+        ];
+        $pdo = new PDO($dsn, $user, $pass, $opt);
+
+        $stmt = $pdo->prepare("INSERT into l40_screens (price,
+                                                        model,
+                                                        size,
+                                                        manufacturer)
+                                values (:price,
+                                        :model,
+                                        :size,
+                                        :manufacturer)");
+        $stmt ->execute(array(  "price" => $this -> price,
+                                "model" => $this -> model,
+                                "size" => $this -> size,
+                                "manufacturer" => $this -> manufacturer,));
+    }
 }
 
 class Mouse extends ElectronicPart implements IElectronicPart{
@@ -45,6 +74,36 @@ class Mouse extends ElectronicPart implements IElectronicPart{
             ', model: '. $this->model . 
             ', Price: ' . $this->price;
     }
+
+    public function insert() {
+        $host = '127.0.0.1';
+        $db   = 'northwind';
+        $user = 'root';
+        $pass = '';
+        $charset = 'utf8';
+
+        $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
+        $opt = [
+            PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+            PDO::ATTR_EMULATE_PREPARES   => false,
+        ];
+        $pdo = new PDO($dsn, $user, $pass, $opt);
+
+        $stmt = $pdo->prepare("INSERT into l40_mouses (price,
+                                                        model,
+                                                        is_wired,
+                                                        manufacturer)
+                                values (:price,
+                                        :model,
+                                        :is_wired,
+                                        :manufacturer)");
+        $stmt ->execute(array(  "price" => $this -> price,
+                                "model" => $this -> model,
+                                "is_wired" => $this -> isWired,
+                                "manufacturer" => $this -> manufacturer,));
+    }
+
 }
 
 class Keyboard extends ElectronicPart implements IElectronicPart{
@@ -63,6 +122,36 @@ class Keyboard extends ElectronicPart implements IElectronicPart{
             ', model: '. $this->model . 
             ', Price: ' . $this->price;
     }
+
+    /*public function insert() {
+        $host = '127.0.0.1';
+        $db   = 'northwind';
+        $user = 'root';
+        $pass = '';
+        $charset = 'utf8';
+
+        $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
+        $opt = [
+            PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+            PDO::ATTR_EMULATE_PREPARES   => false,
+        ];
+        $pdo = new PDO($dsn, $user, $pass, $opt);
+
+        $stmt = $pdo->prepare("INSERT into l40_keyboards (price,
+                                                        model,
+                                                        l40_keyboardsis_wired,
+                                                        manufacturer)
+                                values (:price,
+                                        :model,
+                                        :l40_keyboardsis_wired,
+                                        :manufacturer)");
+        $stmt ->execute(array(  "price" => $this -> price,
+                                "model" => $this -> model,
+                                "l40_keyboardsis_wired" => $this -> isWired,
+                                "manufacturer" => $this -> manufacturer,));
+    }*/
+
 }
 
 class Computer extends ElectronicPart implements IElectronicPart{
