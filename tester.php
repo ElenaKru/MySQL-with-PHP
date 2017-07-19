@@ -26,10 +26,10 @@ $keyboard2 = new Keyboard('Logitech', 285, 'G105', true);
 $keyboard3 = new Keyboard('RAPOO', 189, 'E6100', false);
 $keyboard4 = new Keyboard('Corsair', 799, 'K95', true);
 
-/*$keyboard1->insert();
+$keyboard1->insert();
 $keyboard2->insert();
 $keyboard3->insert();
-$keyboard4->insert();*/
+$keyboard4->insert();
 
 $computer1 = new Computer(
     'GIGABYTE', 

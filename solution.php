@@ -123,7 +123,7 @@ class Keyboard extends ElectronicPart implements IElectronicPart{
             ', Price: ' . $this->price;
     }
 
-    /*public function insert() {
+    public function insert() {
         $host = '127.0.0.1';
         $db   = 'northwind';
         $user = 'root';
@@ -140,17 +140,17 @@ class Keyboard extends ElectronicPart implements IElectronicPart{
 
         $stmt = $pdo->prepare("INSERT into l40_keyboards (price,
                                                         model,
-                                                        l40_keyboardsis_wired,
+                                                        isWired,
                                                         manufacturer)
                                 values (:price,
                                         :model,
-                                        :l40_keyboardsis_wired,
+                                        :isWired,
                                         :manufacturer)");
         $stmt ->execute(array(  "price" => $this -> price,
                                 "model" => $this -> model,
-                                "l40_keyboardsis_wired" => $this -> isWired,
+                                "isWired" => $this -> isWired,
                                 "manufacturer" => $this -> manufacturer,));
-    }*/
+    }
 
 }
 
