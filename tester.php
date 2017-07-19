@@ -62,6 +62,10 @@ $computer3 = new Computer(
     'Intel Skylake GT2 HD Graphics 630'
 );
 
+$computer1->insert();
+$computer2->insert();
+$computer3->insert();
+
 $pur1 = new purchase($screen1, $mouse1, $keyboard1, $computer1);
 $pur2 = new purchase($screen4, $mouse3, $keyboard1, $computer3);
 $pur3 = new purchase($screen3, $mouse2, $keyboard4, $computer1);
